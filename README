@@ -1,0 +1,10 @@
+## Linux Reverse Shell
+Target system acts an client and sever is setup by connection initiator.
+
+### Advantages
+* This remove the requirement of victim's machine IP address and port
+* May help an attacker to bypass incoming connection firewall rules.
+
+
+### Make it invisible & persistent
+<!-- will GO here -->
