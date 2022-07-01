@@ -24,11 +24,9 @@ int main(){
     struct sockaddr_in serv_addr;
     struct hostent *server;   // struct to contain info about host
 
-    char buffer[1024];
-
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if(sockfd < 0){
-        error("Error, while opening socker\n");
+        error("Error, while opening socket\n");
     }
 
     server = gethostbyname("localhost");
