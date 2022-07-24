@@ -17,7 +17,7 @@ Dynamic linker provides feature for development of shared libraries and debuggin
 ### Make it invisible & persistent
 <!-- will GO here -->
 
-We will be using function call hooking to hides to hides our executables files from /bin/ls
+We will be using function call hooking to hides our executables files from /bin/ls
 
 
 
