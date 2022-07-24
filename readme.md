@@ -1,5 +1,5 @@
 ## Linux Reverse Shell
-Target system(attacker) acts an client and sever is setup by connection initiator(victim).
+Target system(victim) acts an client and sever is setup by connection initiator(attacker). This is used as a one of post-exploitation tools to gain persistent remote access to victim machine.
 
 ### Advantages
 * This remove the requirement of victim's machine IP address and port
