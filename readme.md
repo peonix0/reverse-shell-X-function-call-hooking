@@ -23,6 +23,7 @@ Here, We hooked function **readdir()**[<sup>3</sup>](https://man7.org/linux/man-
 
 Instead of hiding files, we hooked readdir() function just to hide directory of name "reverseShell". We modified readdir() in such a way that when it get entry for "hidden_dir_name" it skips and hop to next entry and returns next dirent pointer.
 
+> This can be further improve by hooking more function call to hide process from ps and netstat, but here it completes the purpose of project.
 
 #### Usage & compilation of libreaddir.c -
 <code>> gcc -Wall -fPIC -shared libreaddir.c -ldl -D_GNU_SOURCE -o libreaddir.so   </code> <br>
