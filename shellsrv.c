@@ -13,14 +13,22 @@
 #include <sys/user.h>
 
 
-int portno = 13655;
 
 void error(char *msg){
     perror(msg);
     exit(0);
 }
 
-int main(){
+int main(int argc, char *argv[]){
+    int port;
+
+    if(argc<2){
+        printf("Invalid input args!\n    Usage: ./shellsrv [port] \n");
+        exit(1);
+    }else{
+        port = atoi(argv[1]);
+    }
+
     int sockfd, connfd;
     char buf[1024];
     struct sockaddr_in serv_addr, cli_addr;
@@ -35,7 +43,7 @@ int main(){
     
 
     serv_addr.sin_family = AF_INET;
-    serv_addr.sin_port = htons(portno);
+    serv_addr.sin_port = htons(port);
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 
     int status = bind(sockfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
@@ -51,10 +59,6 @@ int main(){
         error("Error, while accept\n");
     }
     
-    // fcntl(connfd, F_SETFL, O_NONBLOCK|O_RDWR);
-
-    
-    // I want non-blocking read 
     int pid = fork();
 
     if(pid<0){
